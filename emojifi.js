@@ -1,8 +1,8 @@
 //Copyright (c) Owen Hurford 2015
 
 //Set emoji to also replace ascii and use SVG for sake of loveliness
-emojione.ascii = true;
-emojione.imageType = 'png';
+emojione.ascii = false;
+emojione.imageType = 'svg';
 emojione.imagePathSVG = chrome.extension.getURL('emojione/assets/svg/');
 emojione.imagePathPNG = chrome.extension.getURL('emojione/assets/png/');
 
@@ -23,14 +23,15 @@ function recursiveEmojifi(node) {
             if (original !== modified && (node.nodeType == Node.TEXT_NODE || node.nodeType == Node.ELEMENT_NODE)) {
                 parser = new DOMParser();
                 modified = parser.parseFromString(modified, 'text/html');
-                if(modified.body.childNodes.length > 1) {
-                    for(i = 0; i < modified.body.childNodes.length; i++) {
-                        node.parentNode.insertBefore(modified.body.childNodes[i], node);
-                    }
-                    node.parentNode.removeChild(node);
-                } else {
-                    node.parentNode.replaceChild(modified.body.firstChild, node);
+                if(original.indexOf('Ranks.com, Inc.')>=0) {
+                    console.log(modified.body);
                 }
+                i = 0;
+                while (modified.body.childNodes[i]) {
+                    node.parentNode.insertBefore(modified.body.childNodes[i], node);
+                    i++;
+                }
+                node.parentNode.removeChild(node);
             }
         }
     }

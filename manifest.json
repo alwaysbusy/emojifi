@@ -7,13 +7,13 @@
   },
   "browser_action": {
     "default_icon": "emojione/assets/png/1F600.png",
-    "default_popup": "popup.htm"
+    "default_popup": "settings.htm"
   },
   "permissions":  [
     "tabs",
     "http://*/",
     "https://*/",
-    "unsafe-inline"
+    "storage"
   ],
   "web_accessible_resources":[
     "emojione/assets/*",

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Emojifi</title>
+        <link rel="stylesheet" type="text/css" href="emojione/assets/css/emojione.min.css">
+        <link rel="stylesheet" type="text/css" href="nunito.css" >
+        <script type="application/javascript" src="emojione/lib/js/emojione.min.js"></script>
+        <script type="application/javascript" src="emojifi.js"></script>
+        <script type="application/javascript" src="settings.js"></script>
+        <style type="text/css">
+            html{
+                min-width: 300px;
+            }
+            body{
+                font-family: 'Nunito', 'nunitoregular', Helvetica, Arial, sans-serif;
+                margin: 0px 0px 0px 0px;
+                height: 100%;
+                width: 100%;
+            }
+            
+            header{
+                background-color: #ededed;
+                color: #323232;
+                text-align: center;
+            }
+            h1{
+                margin: 0px 0px 0px 0px;
+            }
+            
+            footer{
+                background-color: #323232;
+                color: #ededed;
+                text-align: left;
+                font-size: 0.8em;
+                padding: 4px 4px 4px 4px;
+            }
+            footer ul{
+                margin: 0px 0px 0px 0px;
+                padding: 0px 0px 0px 0px;
+            }
+            footer ul li{
+                display: inline-block;
+                list-style-type: none;
+                padding: 0px 0px 0px 8px;
+            }
+            footer ul li a{
+                color: inherit;
+                text-decoration: none;
+            }
+            footer ul li a:hover{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Emojifi</h1>
+        </header>
+        
+        <section>
+            <h2>Blacklist</h2>
+            <p>Emojifi won't run on these sites.  Put each address on a new line.</p>
+            <textarea id="blacklist"></textarea>
+            <p><input type="checkbox" id="filter" name="filter"/><label for="filter">Use the default Emojifi filter to blacklist websites</label></p>
+        </section>
+        <section>
+            <h2>General Settings</h2>
+            <p><input type="checkbox" id="usage" name="usage" /><label for="usage">Track usage of Emojifi for better results</label></p>
+            <p><input type="checkbox" id="report" name="report"/><label for="report">Report usage statistics for Emojifi for analytical and improvement processes (Webpage header, times, Emoji used and IP address, nothing else and only for pages that use Emoji)</label></p>
+            <p><input type="checkbox" id="enable" name="enable" /><label for="enable">Enable Emojifi</label></p>
+        </section>
+        <section>
+            <h2>Credits and License</h2>
+            <p>Emoji set designed and offered free by <a href="http://emojione.com/" tit="Emoji One" target="_blank">Emoji One</a> under CC BY-SA 4.0 International</p>
+            <p>Emoji software &copy; 2014 Ranks.com, Inc., via Emojione.com available under The MIT License</p>
+            <p>Chrome extension &copy; 2015 Owen Hurford</p>
+            <p></p>
+        </section>
+        
+        <footer><ul>
+            <li><a href="http://www.hurfo.com" title="Owen Hurford" target="_blank">&copy; Owen Hurford 2015</a></li>
+        </ul></footer>
+    </body>
+</html>
