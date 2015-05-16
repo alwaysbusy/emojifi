@@ -37,3 +37,7 @@ function recursiveEmojifi(node) {
 }
 
 emojifi();
+
+document.addEventListener('DOMNodeInserted', function(event) {
+    emojifi();
+});
