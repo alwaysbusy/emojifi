@@ -7,8 +7,12 @@
   },
   "permissions":  [
     "tabs",
-    "http://*/*",
-    "https://*/*"
+    "http://*/",
+    "https://*/"
+  ],
+  "web_accessible_resources":[
+    "emojione/assets/*",
+    "emojione/lib/js/*"
   ],
   "manifest_version": 2
 }

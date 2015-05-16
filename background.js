@@ -4,7 +4,9 @@
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     //Something has happened in the tab, better add some emoji
-    if(changeInfo.url) {
-        alert(changeInfo.url);
+    if(changeInfo.status == 'complete') {
+        chrome.tabs.insertCSS(tabId, {"file" : "/emojione/assets/css/emojione.min.css", "allFrames": true, "matchAboutBlank": true});
+        chrome.tabs.executeScript(tabId, {"file": "emojione/lib/js/emojione.min.js", "allFrames": true, "matchAboutBlank": true});
+        chrome.tabs.executeScript(tabId, {"file": "emojifi.js", "allFrames": true, "matchAboutBlank": true});
     }
 });
