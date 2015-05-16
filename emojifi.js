@@ -41,3 +41,10 @@ emojifi();
 document.addEventListener('DOMNodeInserted', function(event) {
     emojifi();
 });
+
+var emojifi_lastitem;
+
+document.addEventListener('FocusEvent', function(event) {
+    emojifi_lastitem = event.target;
+    console.log(emojifi_lastitem);
+});
