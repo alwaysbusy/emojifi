@@ -9,7 +9,7 @@ emojione.imagePathPNG = chrome.extension.getURL('emojione/assets/png/');
 function emojifi() {
     var original = window.document.getElementsByTagName('body')[0].innerHTML;
     var modified = emojione.toImage(original);
-    window.document.getElementsByTagName('body')[0].innerHTML = modified;
+    if(original != modified) window.document.getElementsByTagName('body')[0].innerHTML = modified;
 }
 
 emojifi();
