@@ -1,0 +1,14 @@
+{
+  "name": "Emojifi",
+  "version": "1.0",
+  "description": "Emoji, in Chrome, like in some space future.",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions":  [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "manifest_version": 2
+}
