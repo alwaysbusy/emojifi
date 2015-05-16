@@ -20,12 +20,9 @@ function recursiveEmojifi(node) {
             }
         } else {
             var original = node.textContent, modified = emojione.toImage(original);
-            if (original !== modified && (node.nodeType == Node.TEXT_NODE || node.nodeType == Node.ELEMENT_NODE)) {
+            if (original !== modified && (node.nodeType == Node.TEXT_NODE || node.nodeType == Node.ELEMENT_NODE) && original.indexOf('©') < 0) {
                 parser = new DOMParser();
                 modified = parser.parseFromString(modified, 'text/html');
-                if(original.indexOf('Ranks.com, Inc.')>=0) {
-                    console.log(modified.body);
-                }
                 i = 0;
                 while (modified.body.childNodes[i]) {
                     node.parentNode.insertBefore(modified.body.childNodes[i], node);
